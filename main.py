@@ -1,14 +1,20 @@
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from emotion_detection.service.api.api import main_router
 import onnxruntime as rt
-app = FastAPI(project_name = "Emotions Detection")
+import os
+
+app = FastAPI(project_name="Emotions Detection")
 app.include_router(main_router)
+
 providers = ['CPUExecutionProvider']
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "vit_classifier.onnx")
+
 m_q = rt.InferenceSession(
-        "emotion_detection/service/vit_classifier.onnx",
-        providers=providers
-    )
+    MODEL_PATH,
+    providers=providers
+)
 
 @app.get("/")
 async def root():
-    return {"hello":"world"}
+    return {"hello": "world"}
