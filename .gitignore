@@ -9,7 +9,6 @@ __pycache__/
 *.ipynb
 
 # ML models
-*.onnx
 *.h5
 *.keras
 *.pb
