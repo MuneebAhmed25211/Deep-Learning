@@ -1,0 +1,23 @@
+# Virtual environment
+venv-emotions-detection/
+
+# Python cache
+__pycache__/
+*.pyc
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# ML models
+*.onnx
+*.h5
+*.keras
+*.pb
+*.tflite
+
+my_model/
+quantized_models/
+
+# Env & logs
+.env
+*.log
