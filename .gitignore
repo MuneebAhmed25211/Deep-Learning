@@ -8,11 +8,7 @@ __pycache__/
 .ipynb_checkpoints/
 *.ipynb
 
-# ML models
-*.h5
-*.keras
-*.pb
-*.tflite
+
 
 my_model/
 quantized_models/
